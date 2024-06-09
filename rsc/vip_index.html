@@ -34,35 +34,42 @@
             color: #0ff;
         }
 
-        .container {
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             width: 80%;
             max-width: 1200px;
-            text-align: center;
+            gap: 20px;
+        }
+
+        .container {
+            flex: 1;
+            min-width: 300px;
             padding: 20px;
             background-color: #111;
             border-radius: 10px;
             box-shadow: 0 0 20px #0ff;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         .container h2 {
             color: #0ff;
             text-shadow: 0 0 10px #00f, 0 0 20px #00f;
+            margin-bottom: 20px;
         }
 
-        .benefits {
-            margin: 20px 0;
-        }
-
-        .benefit {
+        .benefits .benefit {
             margin: 10px 0;
         }
 
-        .benefit h3 {
+        .benefits .benefit h3 {
             color: #0ff;
             text-shadow: 0 0 10px #00f;
         }
 
-        .cta-button {
+        .cta-button, .start-button, .login-button {
             background-color: #111;
             color: #0ff;
             padding: 15px 30px;
@@ -74,11 +81,67 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 0 10px #00f;
+            margin-top: 20px;
         }
 
-        .cta-button:hover {
+        .cta-button:hover, .start-button:hover, .login-button:hover {
             background-color: #0ff;
             color: #111;
+        }
+
+        .config-option {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .config-option label {
+            margin-bottom: 5px;
+        }
+
+        .config-section select, .config-section input {
+            margin: 10px;
+            padding: 10px;
+            background-color: #000;
+            color: #0ff;
+            border: 2px solid #0ff;
+            border-radius: 5px;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+        }
+
+        .note {
+            color: #ff0;
+            margin-top: 20px;
+        }
+
+        .vip-section {
+            background-color: #222;
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: #ff0;
+            box-shadow: 0 0 20px #ff0;
+            margin-top: 20px;
+        }
+
+        .vip-section h2 {
+            color: #ff0;
+            text-shadow: 0 0 10px #ff0, 0 0 20px #f00;
+            margin-bottom: 20px;
+        }
+
+        .vip-section .vip-input {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #111;
+            color: #ff0;
+            border: 2px solid #ff0;
+            border-radius: 5px;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
         }
     </style>
 </head>
@@ -88,22 +151,103 @@
         <p>Desbloquea características exclusivas y eleva tu experiencia al siguiente nivel.</p>
     </header>
 
-    <div class="container">
-        <h2>¿Por qué ser VIP?</h2>
-        <div class="benefits">
-
-            <div class="benefit">
-                <h3>¡Hola comunidad de SnowX Checker! 🌟✨</h3>
-                <p>Nos complace presentarles nuestro servicio VIP 🎉, diseñado especialmente para premiar a los usuarios más fieles y activos 💪. Con VIP, tendrán acceso a gates y herramientas únicas 🔑, mejorando su experiencia y facilitando sus operaciones. ¡Recarguen y usen el checker para disfrutar de estos beneficios exclusivos! 🚀🔒
+    <div class="content">
+        <div class="container">
+            <h2>¿Por qué ser VIP?</h2>
+            <div class="benefits">
+                <div class="benefit">
+                    <h3>¡Hola comunidad de SnowX Checker! 🌟✨</h3>
+                    <p>Nos complace presentarles nuestro servicio VIP 🎉, diseñado especialmente para premiar a los usuarios más fieles y activos 💪. Con VIP, tendrán acceso a gates y herramientas únicas 🔑, mejorando su experiencia y facilitando sus operaciones. ¡Recarguen y usen el checker para disfrutar de estos beneficios exclusivos! 🚀🔒
 
                     ¡Gracias por su apoyo constante! 🙌💼</p>
-            </div>
+                </div>
 
-            <div class="benefit">
-                <h3>Dev by SnowXChecker</h3>
+                <div class="benefit">
+                    <h3>Dev by SnowXChecker</h3>
+                </div>
             </div>
+            <button class="cta-button" onclick="window.location.href='https://api.whatsapp.com/send/?phone=3142360736&text&type=phone_number&app_absent=0'">Become a VIP Member Now</button>
         </div>
-        <button class="cta-button" onclick="window.location.href='https://api.whatsapp.com/send/?phone=3142360736&text&type=phone_number&app_absent=0'">Become a VIP Member Now</button>
+
+        <div class="container config-section">
+            <h2>Configura tu Entorno</h2>
+            <div class="config-option">
+                <label for="proxy">Selecciona tu Proxy:</label>
+                <select id="proxy">
+                    <option value="proxy1">Proxy 1</option>
+                    <option value="proxy2">Proxy 2</option>
+                    <option value="proxy3">Proxy 3</option>
+                    <option value="proxy4">Proxy 4</option>
+                    <option value="proxy5">Proxy 5</option>
+                </select>
+            </div>
+            <div class="config-option">
+                <label for="user-agent">Selecciona tu User Agent:</label>
+                <select id="user-agent">
+                    <option value="agent1">User Agent 1</option>
+                    <option value="agent2">User Agent 2</option>
+                    <option value="agent3">User Agent 3</option>
+                    <option value="agent4">User Agent 4</option>
+                    <option value="agent5">User Agent 5</option>
+                </select>
+            </div>
+            <div class="config-option">
+                <label for="browser">Selecciona tu navegador:</label>
+                <select id="browser">
+                    <option value="chrome">Google Chrome</option>
+                    <option value="firefox">Mozilla Firefox</option>
+                    <option value="edge">Microsoft Edge</option>
+                    <option value="brave">Brave</option>
+                    <option value="chromium">Chromium</option>
+                </select>
+            </div>
+            <div class="note">
+                Nota: Asegúrate de tener instalado el navegador seleccionado.
+            </div>
+            <button class="start-button" onclick="startChromedriver()">Comenzar</button>
+        </div>
     </div>
+
+    <div class="vip-section">
+        <h2>Acceso Exclusivo VIP 🌟✨</h2>
+        <div class="vip-option">
+            <label for="vip-email">Correo Electrónico:</label>
+            <input type="email" id="vip-email" class="vip-input" placeholder="Ingresa tu correo" required>
+        </div>
+        <div class="vip-option">
+            <label for="vip-password">Contraseña:</label>
+            <input type="password" id="vip-password" class="vip-input" placeholder="Ingresa tu contraseña" required>
+        </div>
+        <button class="login-button" onclick="saveCredentials()">Acceder</button>
+    </div>
+
+    <script>
+        function startChromedriver() {
+            var proxy = document.getElementById('proxy').value;
+            var userAgent = document.getElementById('user-agent').value;
+            var browser = document.getElementById('browser').value;
+
+            // Aquí puedes agregar el código para iniciar el Chromedriver con las opciones seleccionadas
+            console.log('Proxy seleccionado:', proxy);
+            console.log('User Agent seleccionado:', userAgent);
+            console.log('Navegador seleccionado:', browser);
+
+            // Llamar a la función para iniciar el Chromedriver con las opciones seleccionadas
+        }
+
+        function saveCredentials() {
+            var email = document.getElementById('vip-email').value;
+            var password = document.getElementById('vip-password').value;
+
+            // Guardar las credenciales de manera eficiente
+            if (email && password) {
+                console.log('Correo Electrónico:', email);
+                console.log('Contraseña:', password);
+                // Aquí puedes agregar el código para guardar las credenciales en una base de datos o archivo
+            } else {
+                alert('Por favor, ingresa tus credenciales.');
+            }
+        }
+    </script>
 </body>
 </html>
