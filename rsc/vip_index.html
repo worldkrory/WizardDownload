@@ -143,6 +143,56 @@
             font-family: 'Press Start 2P', cursive;
             text-align: center;
         }
+
+        /* Sección del Puzzle */
+        .puzzle-section {
+            background-color: #111;
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            color: #0ff;
+            box-shadow: 0 0 20px #0ff;
+            margin-top: 20px;
+        }
+
+        .puzzle-section h2 {
+            color: #0ff;
+            text-shadow: 0 0 10px #00f, 0 0 20px #00f;
+            margin-bottom: 20px;
+        }
+
+        .puzzle-section img {
+            width: 200px; /* Ajusta el tamaño según tus necesidades */
+            height: auto;
+        }
+
+        .puzzle-section input[type="text"] {
+            margin-top: 10px;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #0ff;
+            border-radius: 5px;
+            background-color: #111;
+            color: #0ff;
+        }
+
+        .puzzle-section .submit-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #111;
+            color: #0ff;
+            border: 1px solid #0ff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .puzzle-section .submit-button:hover {
+            background-color: #0ff;
+            color: #111;
+        }
     </style>
 </head>
 <body>
@@ -221,6 +271,13 @@
         <button class="login-button" onclick="saveCredentials()">Acceder</button>
     </div>
 
+    <div class="puzzle-section">
+        <h2>Resuelve el CAPTCHA</h2>
+        <img src="captcha_image.png" alt="CAPTCHA Image">
+        <input type="text" id="captcha-input" placeholder="Introduce el texto del CAPTCHA" required>
+        <button class="submit-button" onclick="submitCaptcha()">Enviar</button>
+    </div>
+
     <script>
         function startChromedriver() {
             var proxy = document.getElementById('proxy').value;
@@ -246,6 +303,18 @@
                 // Aquí puedes agregar el código para guardar las credenciales en una base de datos o archivo
             } else {
                 alert('Por favor, ingresa tus credenciales.');
+            }
+        }
+
+        function submitCaptcha() {
+            var captchaText = document.getElementById('captcha-input').value;
+
+            // Enviar el texto del CAPTCHA para resolverlo
+            if (captchaText) {
+                console.log('Texto del CAPTCHA:', captchaText);
+                // Aquí puedes agregar el código para enviar el texto del CAPTCHA y continuar con el proceso
+            } else {
+                alert('Por favor, introduce el texto del CAPTCHA.');
             }
         }
     </script>
