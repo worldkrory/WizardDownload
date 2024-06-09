@@ -277,6 +277,7 @@
         <div style="display: flex; align-items: center;">
             <input type="text" id="captcha-input" placeholder="Introduce el texto del CAPTCHA" required>
             <button class="submit-button" onclick="submitCaptcha()">Enviar</button>
+            <div id="captcha-enviado" style="display: none;">Captcha enviado!</div>
         </div>
     </div>
 
@@ -314,7 +315,9 @@
             // Enviar el texto del CAPTCHA para resolverlo
             if (captchaText) {
                 console.log('Texto del CAPTCHA:', captchaText);
-                // Aquí puedes agregar el código para enviar el texto del CAPTCHA y continuar con el proceso
+                // Mostrar el mensaje "Captcha enviado"
+                var captchaEnviado = document.getElementById('captcha-enviando');
+                captchaEnviado.style.display = 'block'; // Mostrar el mensaje
             } else {
                 alert('Por favor, introduce el texto del CAPTCHA.');
             }
