@@ -271,11 +271,13 @@
         <button class="login-button" onclick="saveCredentials()">Acceder</button>
     </div>
 
-    <div class="puzzle-section">
+    <div class="puzzle-section" style="display: flex; flex-direction: column; align-items: center;">
         <h2>Resuelve el CAPTCHA</h2>
-        <img src="captcha_image.png" alt="CAPTCHA Image">
-        <input type="text" id="captcha-input" placeholder="Introduce el texto del CAPTCHA" required>
-        <button class="submit-button" onclick="submitCaptcha()">Enviar</button>
+        <img src="captcha_image.png" alt="CAPTCHA Image" style="width: 600px; height: 150px;">
+        <div style="display: flex; align-items: center;">
+            <input type="text" id="captcha-input" placeholder="Introduce el texto del CAPTCHA" required>
+            <button class="submit-button" onclick="submitCaptcha()">Enviar</button>
+        </div>
     </div>
 
     <script>
